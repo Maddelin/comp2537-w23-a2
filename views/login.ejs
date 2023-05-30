@@ -1,0 +1,40 @@
+<%- include("templates/header") %>
+
+<main class="form-signin w-100 m-auto">
+  <div class="d-flex gap-2 justify-content-center py-5">
+    <form action="/loggingin" method="post" class="text-center">
+      <img class="mb-4" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <div class="text-start form my-3">
+        <label for="email" class="form-label">Email</label>
+        <input class="form-control" name='email' type='text' placeholder='Email'>
+        <div class="text-start form-text text-danger">
+          <% if (missingEmail) { %>
+          Email is required!
+          <% } else if (notUser) { %>
+          User not found!
+          <% } %>
+        </div>
+      </div>
+      <div class="text-start form my-3">
+        <label for="password" class="form-label">Password</label>
+        <input class="form-control" name='password' type='password' placeholder='Password'>
+        <div class="text-start form-text text-danger">
+          <% if (missingPassword) { %>
+          Password is required!
+          <% } else if (notPassword) { %>
+          Password is incorrect!
+          <% } %>
+        </div>
+      </div>
+      <div class="checkbox my-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    </form>
+  </div>
+</main>
+
+<%- include("templates/footer") %>

@@ -1,0 +1,14 @@
+<%- include("templates/header") %>
+<h1>Welcome, <%= name %>!</h1>
+<h2> Cats! </h2>
+<div class="container my-3">
+  <a href="/admin" class="btn btn-secondary rounded-pill px-3" type="button">Admin</a>
+  <a href="/dne" class="btn btn-warning rounded-pill px-3" type="button">404</a>
+  <a href="/logout" class="btn btn-danger rounded-pill px-3" type="button">Logout</a>
+</div>
+<div class="row mb-3 text-center">
+  <div class="col-md-4 themed-grid-col"><img class="img-fluid" src="/black-kitten.jpg" /></div>
+  <div class="col-md-4 themed-grid-col"><img class="img-fluid" src="/ragdoll-kitten.jpg" /></div>
+  <div class="col-md-4 themed-grid-col"><img class="img-fluid" src="/siamese-kitten.jpg" /></div>
+</div>
+<%- include("templates/footer") %>

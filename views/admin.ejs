@@ -1,0 +1,15 @@
+<%- include("templates/header") %>
+<div class="container">
+  <h1>Admin Page</h1>
+  <h2> You:</h2>
+  <ul>
+    <%- include("templates/user", {user: currentUser}) %>
+  </ul>
+  <h2>Others:</h2>
+  <ol>
+    <% for (let i=0; i<users.length; i++) { %>
+    <%- include("templates/user", {user: users[i]}) %>
+    <% }; %>
+  </ol>
+</div>
+<%- include("templates/footer") %>

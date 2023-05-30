@@ -1,0 +1,18 @@
+<li>
+  <div class="row my-3">
+    <div class="col-md-6">
+      <%= user.name %> (<%= user.user_type %>): <%= user.email %>
+    </div>
+    <div class="col-md-3">
+      <form method="post" action="/admin/promote">
+        <input type="hidden" name="userId" value="<%= user._id %>" />
+        <button type="submit" class="btn btn-danger">Promote to Admin</button>
+      </form>
+    </div>
+    <div class="col-md-3">
+      <form method="post" action="/admin/demote">
+        <input type="hidden" name="userId" value="<%= user._id %>" />
+        <button type="submit" class="btn btn-success">Demote to User</button>
+      </form>
+    </div>
+</li>

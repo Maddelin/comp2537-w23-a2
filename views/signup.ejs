@@ -1,0 +1,40 @@
+<%- include("templates/header") %>
+<h1>Sign Up</h1>
+<div class="container">
+  <form action="/submitUser" method="post">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input class="form-control" name='name' type='text' placeholder='Name'>
+      <div class="form-text text-danger">
+        <% if (missingName) { %>
+        Name is required!
+        <% } %>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input class="form-control" name='email' type='text' placeholder='Email'>
+      <div class="form-text text-danger">
+        <% if (missingEmail) { %>
+        Email is required!
+        <% } %>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input class="form-control" name='password' type='password' placeholder='Password'>
+      <div class="form-text text-danger">
+        <% if (missingPassword) { %>
+        Password is required!
+        <% } %>
+      </div>
+    </div>
+    <div class="form-text text-danger mb-3">
+      <% if (invalidName) { %>
+      Name should only contain alphanumeric characters; name and password should not contain more than 20 characters.
+      <% } %>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<%- include("templates/footer") %>
